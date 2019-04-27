@@ -1,14 +1,27 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Inicio
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <form>
+      <ion-item>
+          <ion-label position="stacked">Nombre</ion-label>
+          <ion-input name="nombre" [(ngModel)]="data.nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="stacked">Apellido</ion-label>
+          <ion-input name="apellido" [(ngModel)]="data.apellido"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="stacked">Edad</ion-label>
+          <ion-input name="edad" [(ngModel)]="data.edad"></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" (click)="enviarForm(data)">Enviar</ion-button>
+      <ion-button expand="full" (click)="actualizarForm(data)">Actualizar</ion-button>
+    </form>
 </ion-content>
