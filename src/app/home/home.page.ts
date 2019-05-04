@@ -15,19 +15,17 @@ export class HomePage {
   ) {
 
     this.data =  {
-      nombre: '',
-      apellido: '',
-      edad: null
-    }
+      email: '',
+      usuario: ''
+    };
   }
 
   enviarForm(data) {
     console.log(data)
 
     let datosAEnviar: any = {
-      primerNombre: data.nombre,
-      segundoNombre: data.apellido,
-      edad: data.edad
+      email: data.email,
+      usuario: data.usuario
     };
 
     console.log('Datos a enviar:' + JSON.stringify(datosAEnviar));
@@ -38,12 +36,10 @@ export class HomePage {
   }
 
   actualizarForm(data) {
-    console.log(data)
-  
-    let datosAEnviar: any = {
-      primerNombre: data.nombre,
-      segundoNombre: data.apellido,
-      edad: data.edad
+    console.log(data);
+      let datosAEnviar: any = {
+      email: data.email,
+      usuario: data.usuario
     };
 
     console.log('Datos a enviar:' + JSON.stringify(datosAEnviar));
@@ -53,5 +49,17 @@ export class HomePage {
     });
 
   }
+  mostrarDatos(data) {
+    console.log(data);
 
+    const datosAEnviar: any = {
+      email: data.email,
+      usuario: data.usuario
+    };
+    console.log('Todos los registros:' + JSON.stringify(datosAEnviar));
+
+    this.personaService.getAll(datosAEnviar).subscribe(result => {
+      console.log('Datos from server:' + JSON.stringify(result));
+    });
+  }
 }

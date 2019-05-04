@@ -1,7 +1,7 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar  color="dark">
     <ion-title>
-      Inicio
+      Sesión
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,19 +9,15 @@
 <ion-content>
   <form>
       <ion-item>
-          <ion-label position="stacked">Nombre</ion-label>
-          <ion-input name="nombre" [(ngModel)]="data.nombre"></ion-input>
+          <ion-label position="stacked">Correo electronico</ion-label>
+          <ion-input name="email" [(ngModel)]="data.email"></ion-input>
       </ion-item>
       <ion-item>
-          <ion-label position="stacked">Apellido</ion-label>
-          <ion-input name="apellido" [(ngModel)]="data.apellido"></ion-input>
+          <ion-label position="stacked">Usuario</ion-label>
+          <ion-input name="usuario" [(ngModel)]="data.usuario"></ion-input>
       </ion-item>
-      <ion-item>
-          <ion-label position="stacked">Edad</ion-label>
-          <ion-input name="edad" [(ngModel)]="data.edad"></ion-input>
-      </ion-item>
-
-      <ion-button expand="full" (click)="enviarForm(data)">Enviar</ion-button>
-      <ion-button expand="full" (click)="actualizarForm(data)">Actualizar</ion-button>
+      <ion-button expand="full" color="dark" (click)="enviarForm(data)">Enviar</ion-button>
+      <ion-button expand="full" color="dark" (click)="actualizarForm(data)">Actualizar</ion-button>
+      <ion-button expand="full" color="dark" (click)="mostrarDatos(data)">Mostrar</ion-button>
     </form>
 </ion-content>
